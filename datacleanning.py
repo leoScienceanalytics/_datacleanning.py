@@ -153,3 +153,23 @@ for col in df.columns: #Chama de col e  acessa  as colunas no dataframe df
     print(f'Coluna: {col}') #Printa os nomes das colunas do dataframe df
     print(df[col].unique()) #Printa as valores únicos de cada coluna
     print('-'*30)
+    
+colunas = ['telefone.servico_telefone', 'Churn', 'cliente.parceiro', 'cliente.dependentes', 'conta.faturamente_eletronico']
+df[colunas] = df[colunas].replace(mapeamento) #Mudando o valor das colunas em questão, seguindo o mapeamento especificado
+print(df)
+
+#One Hot Encoder
+
+s = pd.Series(list('abca'))
+print(s)
+
+s = pd.get_dummies(s, dtype=int)
+print(s)
+
+print(df.info())
+
+df = pd.get_dummies(df, dtype=int)
+print(df.head())
+
+print(df.columns)
+print(df.info())
